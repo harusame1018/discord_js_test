@@ -14,6 +14,7 @@ client.on('messageCreate', message => {
 
   if(message.content === "こんにちわ") {
     message.channel.send("こんにちわ！");
+    message.channel.send("message",{ file: { attachment: "IMG_20241023_121952.jpg"} });
   }
 });
 
