@@ -13,7 +13,8 @@ client.on('messageCreate', message => {
   if(message.author.bot) return; //BOTのメッセージには反応しない
 
   if(message.content === "こんにちわ") {
-    message.channel.send("こんにちわ！");
+    let message = message.author.username;
+    message.channel.send(message + "さんこんにちわ！");
     message.channel.send("message",{ file: { attachment: "IMG_20241023_121952.jpg"} });
   }
 });
