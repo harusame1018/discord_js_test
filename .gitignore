@@ -330,5 +330,6 @@ ASALocalRun/
 .mfractor/
 
 *.DS_Store
-*.env
+node_modules/
+.env
 out
