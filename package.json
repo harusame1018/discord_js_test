@@ -1,15 +1,12 @@
 {
-  "name": "docker_web_app",
+  "name": "hey",
   "version": "1.0.0",
-  "description": "Node.js on Docker",
-  "author": "First Last <first.last@example.com>",
-  "main": "server.js",
-  "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "discord.js": "^14.16.3",
-    "express": "^4.20.0"
+    "discord.py": "^1.0.0",
+    "hey": "file:",
+    "time": "file:"
   }
 }
