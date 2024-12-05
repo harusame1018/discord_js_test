@@ -1,6 +1,8 @@
 const { Client, GatewayIntentBits, Events, Collection } = require('discord.js');
 const fs = require('node:fs');
 const naninuneno = require("./commands/naninuneno.js")
+const time = require("./commands/time.js")
+
 const path = require('node:path');
 //const client = new Client({ intents: ['GUILDS', 'GUILD_MESSAGES', 'MESSAGE_CONTENT'] });
 const client = new Client({
@@ -35,9 +37,22 @@ client.once(Events.InteractionCreate, async interaction => {
                 await interaction.reply({ content: 'コマンド実行時にエラーになりました。', ephemeral: true });
             }
         }
-    } else {
+    } else if(interaction.commandName === time.data.name) {
+		try {
+            await time.execute(interaction);
+        } catch (error) {
+            console.error(error);
+            if (interaction.replied || interaction.deferred) {
+                await interaction.followUp({ content: 'コマンド実行時にエラーになりました。', ephemeral: true });
+            } else {
+                await interaction.reply({ content: 'コマンド実行時にエラーになりました。', ephemeral: true });
+            }
+        }
+	}
+	else {
         console.error(`${interaction.commandName}というコマンドには対応していません。`);
     }
+
 });
 
 client.on('ready', () => {
@@ -47,7 +62,8 @@ client.on('ready', () => {
     status: 'online',
   });
 });
-client.login(process.env.DISCORD_TOKEN);
+let discord_token = process.env.DISCORD_TOKEN;
+client.login(discord_token);
 //client.login("");
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
