@@ -47,7 +47,7 @@ client.on('ready', () => {
     status: 'online',
   });
 });
-client.login("process.env.DISCORD_TOKEN");
+client.login(process.env.DISCORD_TOKEN);
 //client.login("");
 client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
