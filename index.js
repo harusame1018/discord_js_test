@@ -58,6 +58,7 @@ client.once(Events.InteractionCreate, async interaction => {
 
 client.on('ready', () => {
   console.log('ボットが起動したよ');
+  message.channel.send("ボットが起動したよ");
   client.user.setPresence({
     activities: [{ name: 'はるさめおいしいよ', type: 'WATCHING' }],
     status: 'online',
