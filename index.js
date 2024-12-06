@@ -23,6 +23,9 @@ client.on('messageCreate', message => {
     let ransu = Math.floor(Math.random() * word.length);
     message.channel.send(word[ransu]);
   }
+  if(message.content === "くず") {
+    message.reply("あ゙？？？");
+  }
 });
 client.once(Events.InteractionCreate, async interaction => {
     if(!interaction.isChatInputCommand()) return;
