@@ -5,7 +5,9 @@
     "start": "node index.js"
   },
   "dependencies": {
+    "discord.js": "^14.16.3",
     "discord.py": "^1.0.0",
+    "dotenv": "^16.4.7",
     "hey": "file:",
     "time": "file:"
   }
