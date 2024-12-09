@@ -29,6 +29,10 @@ client.on('messageCreate', message => {
   if(message.content === "サイト教えて") {
     message.reply("https://harusame-rpg.glitch.me/");
   }
+  let randomm = Math.floor(Math.random() * 100);
+  if(randomm === 1 && message.content === 草) {
+    message.channnel.send("大草原アマゾン森林草ｗｗｗｗ(笑)");
+  }
 });
 function kido() {
   client.on("messageCreate", message => {
