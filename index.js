@@ -30,12 +30,12 @@ client.on('messageCreate', message => {
   if(message.content === "サイト教えて") {
     message.reply("https://harusame-rpg.glitch.me/");
   }
-  let randomm = Math.floor(Math.random() * 100);
-  if(randomm === 1 || randomm === 0 || randomm === 2 || randomm === 3 && message.content === 草) {
-    message.channnel.send("大草原アマゾン森林草ｗｗｗｗ(笑)");
+  let randomm = Math.floor(Math.random() * 50);
+  if(randomm === 1 || randomm === 0 || randomm === 2 || randomm === 3 || randomm === 5 && message.content === 草) {
+    message.channel.send("大草原アマゾン森林草ｗｗｗｗ(笑)");
   }
 });
-function kido() {
+/*function kido() {
   client.on("messageCreate", message => {
     if(count === 0) {
       message.channel.send("Botが起動したよ");
@@ -43,7 +43,7 @@ function kido() {
     }
   });
   
-}
+}*/
 client.once(Events.InteractionCreate, async interaction => {
     if(!interaction.isChatInputCommand()) return;
     
@@ -82,11 +82,12 @@ client.on('ready', () => {
     activities: [{ name: 'はるさめおいしいよ', type: 'WATCHING' }],
     status: 'online',
   });*/
+  //channel.send("起動しました");
   client.user.setActivity({ 
     name: '明日の天気は美味しいです',
     type: ActivityType.Custom
 });
-kido();
+//kido();
 });
 //client.user.setStatus(PresenceUpdateStatus.DoNotDisturb);
 let discord_token = process.env.DISCORD_TOKEN;
