@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Events, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, Events, Collection, PresenceUpdateStatus, ActivityType } = require('discord.js');
 const fs = require('node:fs');
 const naninuneno = require("./commands/naninuneno.js")
 const time = require("./commands/time.js")
@@ -61,10 +61,14 @@ client.once(Events.InteractionCreate, async interaction => {
 
 client.on('ready', () => {
   console.log('ボットが起動したよ');
-  client.user.setPresence({
+  /*client.user.setPresence({
     activities: [{ name: 'はるさめおいしいよ', type: 'WATCHING' }],
     status: 'online',
-  });
+  });*/
+  client.user.setActivity({ 
+    name: 'はるさめおいしいよ',
+    type: ActivityType.Custom
+});
 });
 let discord_token = process.env.DISCORD_TOKEN;
 client.login(discord_token);
