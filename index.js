@@ -11,7 +11,7 @@ const client = new Client({
 });
 let word = ["すごい！あたり！","残念外れだ","ふつー"];
 client.on('messageCreate', message => {
-
+  
   if(message.author.bot) return; //BOTのメッセージには反応しない
 
   if(message.content === "hey") {
@@ -30,6 +30,12 @@ client.on('messageCreate', message => {
     message.reply("https://harusame-rpg.glitch.me/");
   }
 });
+function kido() {
+  client.on("messageCreate", message => {
+    message.channel.send("Botが起動したよ");
+  });
+  
+}
 client.once(Events.InteractionCreate, async interaction => {
     if(!interaction.isChatInputCommand()) return;
     
@@ -72,6 +78,7 @@ client.on('ready', () => {
     name: 'はるさめおいしいよ',
     type: ActivityType.Custom
 });
+kido();
 });
 //client.user.setStatus(PresenceUpdateStatus.DoNotDisturb);
 let discord_token = process.env.DISCORD_TOKEN;
