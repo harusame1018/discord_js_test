@@ -75,7 +75,7 @@ client.on('ready', () => {
     status: 'online',
   });*/
   client.user.setActivity({ 
-    name: 'はるさめおいしいよ',
+    name: '学校なう',
     type: ActivityType.Custom
 });
 kido();
