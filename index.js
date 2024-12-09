@@ -70,7 +70,7 @@ client.on('ready', () => {
     type: ActivityType.Custom
 });
 });
-client.user.setStatus(PresenceUpdateStatus.DoNotDisturb)
+//client.user.setStatus(PresenceUpdateStatus.DoNotDisturb);
 let discord_token = process.env.DISCORD_TOKEN;
 client.login(discord_token);
 //client.login("");
