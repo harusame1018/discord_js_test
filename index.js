@@ -26,6 +26,9 @@ client.on('messageCreate', message => {
   if(message.content === "くず") {
     message.reply("あ゙？？？");
   }
+  if(message.content === "サイト教えて") {
+    message.reply("https://harusame-rpg.glitch.me/");
+  }
 });
 client.once(Events.InteractionCreate, async interaction => {
     if(!interaction.isChatInputCommand()) return;
