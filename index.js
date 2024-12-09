@@ -2,6 +2,7 @@ const { Client, GatewayIntentBits, Events, Collection, PresenceUpdateStatus, Act
 const fs = require('node:fs');
 const naninuneno = require("./commands/naninuneno.js")
 const time = require("./commands/time.js")
+let count = 0;
 //const require = createRequire(import.meta.url);
 require("dotenv").config({ debug: true });
 const path = require('node:path');
@@ -36,7 +37,10 @@ client.on('messageCreate', message => {
 });
 function kido() {
   client.on("messageCreate", message => {
-    message.channel.send("Botが起動したよ");
+    if(count === 0) {
+      message.channel.send("Botが起動したよ");
+      count ++;
+    }
   });
   
 }
@@ -79,7 +83,7 @@ client.on('ready', () => {
     status: 'online',
   });*/
   client.user.setActivity({ 
-    name: '学校なう',
+    name: '明日の天気は美味しいです',
     type: ActivityType.Custom
 });
 kido();
